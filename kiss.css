@@ -1,0 +1,61 @@
+/* Базовые настройки */
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffc1de, #ff98d4);
+  font-family: "Comic Sans MS", Arial;
+}
+
+/* Поцелуй на весь экран */
+.kiss {
+  font-size: 300px;
+  opacity: 0;
+  animation: kissAnim 2s infinite alternate;
+}
+
+/* Анимация появления и исчезания */
+@keyframes kissAnim {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* Летающий прямоугольник снизу */
+.floating-box {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: floatUp 3s forwards;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Поднимаем div снизу вверх */
+@keyframes floatUp {
+  0% { bottom: -100px; }
+  100% { bottom: 100px; }
+}
+
+/* Текст внутри div — справа налево */
+.fly-text {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: textFly 1.5s 1s forwards;
+}
+
+@keyframes textFly {
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateX(0); }
+}
